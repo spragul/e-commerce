@@ -73,7 +73,7 @@ function Sidebar({ children }) {
             <div className="sidebar">
                 <div className="top_section">
                     <div className="icon"><FaVolleyballBall /></div>
-                    <div className="link d-none d-sm-inline">Rental App </div>
+                    <div className="link d-none d-sm-inline">E-commerce App </div>
                 </div>
                 {MyRole==="admin" ?
                     menuItem.map((item, index) => (
