@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { URL } from "../backend link";
 import { toast } from "react-toastify";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { AppState } from "./provider/provider";
+import { URL } from "../backend link";
 
 const productSchemaValidation = yup.object({
   id: yup.string().required("Please fill in id"),
@@ -30,7 +30,7 @@ function EditProduct() {
   async function editproduct(productobj) {
     console.log(productobj)
     try {
-      let response = await axios.post(
+      let response = await axios.put(
         `${URL}/product/update/${idx}`,
         productobj,
         { headers: { Authorization: `Bearer ${token}` } }

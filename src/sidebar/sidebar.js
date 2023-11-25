@@ -137,7 +137,7 @@ export function NavScrollExample({ title }) {
                         >
                             <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/")}>Home</button>
                             {MyRole ==="user" ?
-                            <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/detail/cart")}> <div className="icon"></div><FaShoppingCart />cart</button>: ""
+                            <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/myorders")}> <div className="icon"></div><FaShoppingCart />Order</button>: ""
                             }
                         </Nav>
                         <Form className="d-flex">

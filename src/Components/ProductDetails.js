@@ -52,7 +52,7 @@ export function ProductDetails() {
 
           <button
             style={{ borderRadius: "10px", backgroundColor: "gold" }}
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/")}
           >
             Product List
           </button>
