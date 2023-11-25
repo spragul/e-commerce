@@ -130,7 +130,7 @@
   }
   
   /* 
-Book List*/
+product List*/
 .product-condinar{
   display: flex;
   flex-wrap: wrap;
@@ -196,4 +196,11 @@ height: 250px;
 .button-delete:hover{
   background-color: maroon;
 }
-/* Book List end */
+/* product List end */
+
+.mybtn-low:hover{
+  background-color: maroon;
+}
+.mybtn-high:hover{
+  background-color: rgb(0, 128, 64);
+}

@@ -56,7 +56,7 @@ function Sidebar({ children }) {
                 icon: <FaBookReader />
             },
             {
-                ppath:'/myorders',
+                path:'/myorders',
                 name:"Orders",
                 icon:<FaLuggageCart/>
             },         
