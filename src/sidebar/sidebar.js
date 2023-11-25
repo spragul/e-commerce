@@ -23,7 +23,7 @@ function Sidebar({ children }) {
     const MyRole = sessionStorage.getItem('myRole')
         const menuItem = [
             {
-                path: "/dashboard",
+                path: "/",
                 name: "Dashboard",
                 icon: <FaBookReader />
             },
@@ -51,18 +51,19 @@ function Sidebar({ children }) {
         ]
         const menuItem1 = [
             {
-                path: "/dashboard",
+                path: "/",
                 name: "Dashboard",
                 icon: <FaBookReader />
             },
             {
-                path: "/detail/cart",
-                name: "Cart",
-                icon: <FaShoppingCart />
-            },            {
-                path:'/myorders',
+                ppath:'/myorders',
                 name:"Orders",
                 icon:<FaLuggageCart/>
+            },         
+            {
+                path:'/favorite/products',
+                name:"FavoriteProducts",
+                icon:<FaRegFileAlt/>
             }
         ]
 
@@ -134,7 +135,7 @@ export function NavScrollExample({ title }) {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/dashboard")}>Home</button>
+                            <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/")}>Home</button>
                             {MyRole ==="user" ?
                             <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/detail/cart")}> <div className="icon"></div><FaShoppingCart />cart</button>: ""
                             }
