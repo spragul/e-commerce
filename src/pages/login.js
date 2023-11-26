@@ -140,8 +140,8 @@ export function Login() {
                 </div>
                 <div>
                   <p>Admin</p>
-                  <p>email:<span>spragul33@gmail.com</span></p>
-                  <p>password<span>Ragul123@</span></p>
+                  <p>email:=<span>spragul33@gmail.com</span></p>
+                  <p>password:=<span>Ragul123@</span></p>
                 </div>
 
                 <div>
