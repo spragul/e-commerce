@@ -1,137 +1,139 @@
+.App {
+  text-align: center;
+}
 
+footer {
+  padding: 17px;
+  font-size: larger;
+  font-weight: bolder;
+  width: 100%;
+  background: #4d58ee;
+}
 
-  .App {
-    text-align: center;
-  }
-  
-  footer {
-  
-    padding: 17px;
-    font-size: larger;
-    font-weight: bolder;
-    width: 100%;
-    background: #4d58ee;
-  }
-  
-  /* Sidebar start*/
-  
-  .sid-container {
-    display: flex;
-    /* background-color: aquamarine; */
-  }
-  
-  .container {
-    display: flex;
-  
-  }
-  
-  main {
-    width: 100%;
-  
-  }
-  
-  .firstpage-button:hover{
-    border: 2px solid rgb(31, 167, 31);
-    border-radius: 5px;
-    background-color: #bbbde6;
-    color: #f70f0f;
-  }
-  
-  .sidebar {
-    background: #4d58ee;
-    color: #fff;
-    height: auto;
-    width: 20%;
-    transition: all 0.5s;
-  }
-  
-  .top_section {
-    display: flex;
-    align-items: center;
-    padding: 20px 15px;
-  }
-  
-  .logo {
-    font-size: 30px;
-  }
-  
-  .bars {
-    display: flex;
-    font-size: 25px;
-    margin-left: 50px;
-  }
-  
-  .link {
-    display: flex;
-    color: #fff;
-    padding: 10px 15px;
-    gap: 15px;
-    transition: all 0.5s;
-  }
-  
-  .link:hover {
-    background: lightskyblue;
-    color: #000;
-    transition: all 0.5s;
-  }
-  
-  .active {
-    background: lightskyblue;
-    color: #000;
-  }
-  
-  .icon,
-  .link_text {
-    font-size: 20px;
-  }
-  
-  .text-deactron {
-    text-decoration: none;
-  }
-  
-  .redius {
-    border-radius: 50%;
-  }
-  .bg-clr{
-    background-color: #d1d3e2;
-    width: 40%;
-    height: 55%;
-    }
-    .divider:after,
-    .divider:before {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: #eee;
-    }
-    
-    .back {
-      /* fallback for old browsers */
-      background: #6a11cb;
-    
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-    
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
-    }
-    .text-areas{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin : 12px;
-    }
-    
-  
-  .nav-clr {
-    background: #4d58ee;
-    color: #ccc;
-  }
-  
-  /* 
+/* Sidebar start*/
+
+.sid-container {
+  display: flex;
+  /* background-color: aquamarine; */
+}
+
+.container {
+  display: flex;
+}
+
+main {
+  width: 100%;
+}
+
+.firstpage-button:hover {
+  border: 2px solid rgb(31, 167, 31);
+  border-radius: 5px;
+  background-color: #bbbde6;
+  color: #f70f0f;
+}
+
+.sidebar {
+  background: #4d58ee;
+  color: #fff;
+  height: auto;
+  width: 20%;
+  transition: all 0.5s;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.link {
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+
+.link:hover {
+  background: lightskyblue;
+  color: #000;
+  transition: all 0.5s;
+}
+
+.active {
+  background: lightskyblue;
+  color: #000;
+}
+
+.icon,
+.link_text {
+  font-size: 20px;
+}
+
+.text-deactron {
+  text-decoration: none;
+}
+
+.redius {
+  border-radius: 50%;
+}
+.bg-clr {
+  background-color: #d1d3e2;
+  width: 40%;
+  height: 55%;
+}
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.back {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
+}
+.text-areas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
+}
+
+.nav-clr {
+  background: #4d58ee;
+  color: #ccc;
+}
+
+/* 
 product List*/
-.product-condinar{
+.product-condinar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -141,14 +143,13 @@ product List*/
   gap: 1rem;
 }
 
-.product-card{
+.product-card {
   background-color: rgb(168 243 134 / 98%);
-  border-radius : 10px;
-  width : 350px;
-  height : 450px;
-
+  border-radius: 10px;
+  width: 350px;
+  height: 450px;
 }
-.cart-condinar{
+.cart-condinar {
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -158,49 +159,71 @@ product List*/
   padding: 5px;
   gap: 1rem;
 }
-.cart-card{
+.cart-card {
   background-color: rgb(245, 169, 239);
-  border-radius : 10px;
-  width : 350px;
-  height : 250px;
-   box-shadow: #e9780e 0px 0px 30px
-
+  border-radius: 10px;
+  width: 350px;
+  height: 250px;
+  box-shadow: #e9780e 0px 0px 30px;
 }
-.cart-btn:hover{
-  background-color:royalblue;
+.cart-btn:hover {
+  background-color: royalblue;
   color: #000;
-
 }
-.image{
-width: 220px;
-height: 250px;
+.image {
+  width: 220px;
+  height: 250px;
 }
 
-.btn-group{
+.btn-group {
   gap: 1rem;
 }
 
-.button{
+.button {
   border-radius: 10px;
   background-color: forestgreen;
   color: #fff;
-
 }
-.button-edit:hover{
+.button-edit:hover {
   background-color: rgb(226, 241, 11);
-  color:black;
+  color: black;
 }
-.button-view:hover{
+.button-view:hover {
   background-color: indigo;
 }
-.button-delete:hover{
+.button-delete:hover {
   background-color: maroon;
 }
 /* product List end */
 
-.mybtn-low:hover{
+.mybtn-low:hover {
   background-color: maroon;
 }
-.mybtn-high:hover{
+.mybtn-high:hover {
   background-color: rgb(0, 128, 64);
+}
+
+.Detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-par {
+  font-size: 30px;
+}
+
+.detail-img {
+  width: 300px;
+  height: 300px;
+}
+.c-co {
+  color: #6a11cb;
+}
+@media screen and (max-width: 600px) {
+  .detail-img {
+    width: 200px;
+    height: 200px;
+  }
 }

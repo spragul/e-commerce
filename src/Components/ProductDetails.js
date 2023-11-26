@@ -11,6 +11,7 @@ import Table from "react-bootstrap/Table";
 export function ProductDetails() {
   const [participantdisplay, setParticipantdisplay] = useState("none");
   const [message, setMessage] = useState("");
+  const [count,setCount]=useState([]);
   const [productDatas, setProductDatas] = useState([]);
   const { index } = useParams();
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export function ProductDetails() {
   }
   useEffect(() => {
     getdata();
-  }, [message]);
+  }, [count]);
   //add favorite product
   async function addfavoriteproduct(idx) {
     const obj = { idx: idx };
@@ -47,6 +48,7 @@ export function ProductDetails() {
         }
       );
       console.log(response);
+      setCount(response.data.product[0]);
       toast(response.data.message);
     } catch (error) {
       console.log(error);
@@ -83,29 +85,46 @@ export function ProductDetails() {
 
   return (
     <Sidebar>
-      <div className="book-detail-condinar">
-        <div className="Detail-card" style={{gap:"10px"}}>
+      <div className="product-detail-condinar">
+        <div className="Detail-card" style={{ gap: "10px" }}>
           <h1 style={{ color: "darkgreen" }}>{productDatas.productName}</h1>
           <img
-            style={{ width: "300px", height: "300px" }}
+            className="detail-img"
             src={productDatas.image}
             title={productDatas.productName}
             alt={productDatas.productName}
           ></img>
-          <p style={{ fontSize: "30px" }}>
-            categories: {productDatas.categories}
+          <p className="details-par">
+            <span className="c-co">categories:</span>
+            {productDatas.categories}
           </p>
-          <p style={{ fontSize: "30px" }}>price: {productDatas.description}</p>
-          <p style={{ fontSize: "30px" }}>
-            price: {productDatas.specifications}
+          <p className="details-par" style={{ textAlign: "center" }}>
+            <span className="c-co">description:</span>{" "}
+            {productDatas.description}
           </p>
-          <p style={{ fontSize: "30px" }}>price: {productDatas.price}</p>
-          <p style={{ fontSize: "30px" }}>price: {productDatas.releaseDate}</p>
-          <p style={{ fontSize: "30px" }}>price: {productDatas.status}</p>
-
+          <p className="details-par">
+            <span className="c-co">specifications</span>
+            {productDatas.specifications}
+          </p>
+          <p className="details-par">
+            <span className="c-co">price: </span>
+            {productDatas.price}
+          </p>
+          <p className="details-par">
+            <span className="c-co">releaseDate:</span>{" "}
+            {productDatas.releaseDate}
+          </p>
+          <p className="details-par">
+            <span className="c-co">status:</span>{" "}
+            {productDatas.status === true ? (
+              <span>true</span>
+            ) : (
+              <span>false</span>
+            )}
+          </p>
           <button
             style={{ borderRadius: "10px", backgroundColor: "gold" }}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/dashboard")}
           >
             Product List
           </button>
@@ -117,7 +136,7 @@ export function ProductDetails() {
           </button>
         </div>
       </div>
-      <div className="" style={{dispaly:"flex"}}>
+      <div className="" style={{ dispaly: "flex" }}>
         <h1>Add Review</h1>
         <input
           onChange={(e) => setMessage(e.target.value)}
@@ -127,8 +146,13 @@ export function ProductDetails() {
           Submit
         </button>
       </div>
-      {/* {productDatas.reviews.length !== 0 ? (
-        <div className="detail-part" style={{ display: participantdisplay }}>
+      <div>
+        <h1>Review</h1>
+        <p>Click following button</p>
+        {productDatas == "" ? (
+          ""
+        ) : (
+          <div className="detail-part" style={{ display: participantdisplay }}>
           <Table striped bordered hover variant="dark">
             <thead>
               <tr>
@@ -145,41 +169,44 @@ export function ProductDetails() {
               ))}
             </tbody>
           </Table>
-        </div>
-      ) : (
-        ""
-      )} */}
-      {/* <div className="btn-container">
-        {productDatas.reviews.length !== 0 ? (
-          <div>
-            {participantdisplay === "none" ? (
-              <Button
-                variant="primary"
-                onClick={() => {
-                  setParticipantdisplay("block");
-                }}
-                size="sm"
-              >
-                Show Review
-              </Button>
-            ) : (
-              <Button
-                variant="primary"
-                onClick={() => {
-                  setParticipantdisplay("none");
-                }}
-                size="sm"
-              >
-                Hidden Review
-              </Button>
-            )}
           </div>
-        ) : (
-          <Button variant="primary" onClick={() => popmessage()} size="sm">
-            Show participant
-          </Button>
         )}
-      </div> */}
+      </div>
+      {productDatas == "" ? (
+        ""
+      ) : (
+        <div className="btn-container">
+          {productDatas.reviews.length !== 0 ? (
+            <div>
+              {participantdisplay === "none" ? (
+                <Button
+                  variant="success"
+                  onClick={() => {
+                    setParticipantdisplay("block");
+                  }}
+                  size="sm"
+                >
+                  Show Review
+                </Button>
+              ) : (
+                <Button
+                  variant="success"
+                  onClick={() => {
+                    setParticipantdisplay("none");
+                  }}
+                  size="sm"
+                >
+                  Hidden Review
+                </Button>
+              )}
+            </div>
+          ) : (
+            <Button variant="primary" onClick={() => popmessage()} size="sm">
+              Show participant
+            </Button>
+          )}
+        </div>
+      )}
     </Sidebar>
   );
 }

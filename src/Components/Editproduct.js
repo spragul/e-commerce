@@ -39,7 +39,7 @@ function EditProduct() {
       setProductData([...productData])
       toast(response.data.message);
       if (response.status==200) {
-        navigate("/");
+        navigate("/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -252,7 +252,7 @@ function EditProduct() {
               Submit
             </button>{" "}
             |
-            <Link className="btn btn-danger" to={"/"}>
+            <Link className="btn btn-danger" to={"/dashboard"}>
               Back
             </Link>
           </div>

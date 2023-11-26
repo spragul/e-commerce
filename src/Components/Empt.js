@@ -1,21 +1,25 @@
-import React from "react";
-import {  useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Loading } from "../pages/loading";
 
 
 
+
 function Empt() {
-  let navigate= useNavigate();
+  const navigate = useNavigate();
   let token=sessionStorage.getItem('token');
+  console.log(token)
+ useEffect(()=>{
   if(token){
     navigate('/dashboard');
   }else{
     navigate('/login');
   }
+ },[])
 
   return(
       <div>
-          <Loading/>
+         <Loading/>
       </div>
   )
 }

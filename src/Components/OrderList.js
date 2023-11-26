@@ -10,7 +10,7 @@ function OrderList() {
       const token = sessionStorage.getItem("token");
       const id=sessionStorage.getItem('myid')
   
-      async function getfavoriteproduct(){
+      async function getorder(){
            try {
               let response = await axios.get(`${URL}/user/getorder/${id}`, {
                   headers: { Authorization: `Bearer ${token}` },
@@ -23,7 +23,7 @@ function OrderList() {
            }
         }
         useEffect(()=>{
-          getfavoriteproduct()
+          getorder()
         },[])
   return (
     <Sidebar>
@@ -35,11 +35,8 @@ function OrderList() {
           <th>product ID</th>
           <th>product NAME</th>
           <th>Categories</th>
-          <th>Description</th>
-          <th>Specifications</th>
           <th>Image</th>
           <th>Price</th>
-          <th>ReleaseDate</th>
           <th>Product status</th>
         </tr>
       </thead>
@@ -49,11 +46,8 @@ function OrderList() {
             <td>{prod._id}</td>
             <td>{prod.productName}</td>
             <td>{prod.categories}</td>
-            <td>{prod.description}</td>
-            <td>{prod.specifications}</td>
             <td><img style={{width:"50px",height:"50px"}} src={prod.image} title={prod.productName} alt={prod.productName}></img></td>
             <td>{prod.price}</td>
-            <td>{prod.releaseDate}</td>
             {prod.status===true ?<td>true</td>:<td>false</td> }
           </tr>
         </tbody>

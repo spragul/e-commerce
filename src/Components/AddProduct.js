@@ -38,7 +38,7 @@ function AddProduct() {
       toast(response.data.message);
       if (response.status == 200) {
         setProductData([...productData, response.data])
-        navigate("/");
+        navigate("/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -249,7 +249,7 @@ function AddProduct() {
                 Submit
               </button>{" "}
               |
-              <Link className="btn btn-danger" to={"/"}>
+              <Link className="btn btn-danger" to={"/dashboard"}>
                 Back
               </Link>
             </div>

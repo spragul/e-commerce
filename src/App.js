@@ -18,9 +18,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-      {/* <Route  path="/" element={<Empt /> }/> */}
+      <Route exact  path="/" element={<Empt /> }/>
 
-      <Route path='/' element={<ListOfProduct/>}/>
+      <Route path='/dashboard' element={<ListOfProduct/>}/>
 
       <Route path="/product/detail/:index" element={<ProductDetails/>}/>
 

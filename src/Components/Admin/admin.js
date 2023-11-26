@@ -52,11 +52,8 @@ function ListTable({ heading, sty }) {
             <th>product ID</th>
             <th>product NAME</th>
             <th>Categories</th>
-            <th>Description</th>
-            <th>Specifications</th>
             <th>Image</th>
             <th>Price</th>
-            <th>ReleaseDate</th>
             <th>Product status</th>
             <th>BUTTON</th>
           </tr>
@@ -67,11 +64,11 @@ function ListTable({ heading, sty }) {
               <td>{prod._id}</td>
               <td>{prod.productName}</td>
               <td>{prod.categories}</td>
-              <td>{prod.description}</td>
-              <td>{prod.specifications}</td>
+              {/* <td>{prod.description}</td>
+              <td>{prod.specifications}</td> */}
               <td><img style={{width:"50px",height:"50px"}} src={prod.image} title={prod.productName} alt={prod.productName}></img></td>
               <td>{prod.price}</td>
-              <td>{prod.releaseDate}</td>
+              {/* <td>{prod.releaseDate}</td> */}
               {prod.status===true ?<td>true</td>:<td>false</td> }
               <td><div className='btn-group'>
                 <button

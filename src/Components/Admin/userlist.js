@@ -37,7 +37,6 @@ export function UserList() {
                                     <th>Email</th>
                                     <th>Mobile Number</th>
                                     <th>Role</th>
-                                    <th>createdAt</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,7 +47,6 @@ export function UserList() {
                                         <td>{x.email}</td>
                                         <td>{x.mobile}</td>
                                         <td>{x.role}</td>
-                                        <td>{x.createdAt}</td>
                                     </tr>
                                 ))
                                 }</> : <></>
