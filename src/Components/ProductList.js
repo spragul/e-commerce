@@ -17,7 +17,9 @@ export default function ListOfProduct() {
   const MyRole = sessionStorage.getItem("myRole");
   const token = sessionStorage.getItem("token");
   const id = sessionStorage.getItem("myid");
-  const [count,setCount]=useState('false');
+  const [count,setCount]=useState(0);
+  const [mysort,setMysort]=useState(0);
+  console.log(mysort)
   //add order
   async function addorder(idx) {
     const obj = { idx: idx };
@@ -52,7 +54,7 @@ export default function ListOfProduct() {
     if (token) {
       getDetails();
     }
-  }, [count]);
+  }, [count,mysort]);
 
   return (
     <Sidebar>
@@ -67,20 +69,46 @@ export default function ListOfProduct() {
           </InputGroup>
         </Form>
         <div>
+          <h6>Popularity</h6>
           <div className="btn">
-             <button className="mybtn-low" type="button" onClick={()=>setCount(false)} >Low to High</button>
+
+             <button className="mybtn-low" type="button" onClick={()=>setCount(2)} >Low to High</button>
           </div>
           <div className="btn ">
-             <button className="mybtn-high" type="button" onClick={()=>setCount(true)} > High to Low</button>
+             <button className="mybtn-high" type="button" onClick={()=>setCount(3)} > High to Low</button>
           </div>
+        </div>
+        <div>
+          <h6>Price</h6>
+          <div className="btn">
+             <button className="mybtn-low" type="button" onClick={()=>setCount(1)} >Low to High</button>
+          </div>
+          <div className="btn ">
+             <button className="mybtn-high" type="button" onClick={()=>setCount(-1)} > High to Low</button>
+          </div>
+           <div className="btn"> <button className="mybtn-low" type="button" onClick={()=>setCount(0)} >Reset</button></div>
         </div>
       </div>
 
       <div className="product-condinar">
         {productData.sort((a,b)=>{
-            return count === false
-            ? parseFloat(a.price) - parseFloat(b.price)
-            : parseFloat(b.price)-parseFloat(a.price);
+            if (count == 0) {
+              return 0;
+          }
+          else if (count == 1) {
+            return a.price - b.price
+          }
+          else if (count == -1) {
+            return b.price - a.price 
+          }
+          else if (count == 2) {
+            return a.popularity - b.popularity  
+          }
+          else if (count == 3) {
+            return b.popularity - a.popularity 
+          }
+          
+        
         })
           .filter((item) => {
             return search.toLowerCase() === ""

@@ -128,7 +128,7 @@ export function NavScrollExample({ title }) {
             <Navbar className="nav-clr" expand="lg">
                 <Container fluid>
                     <Navbar.Brand href="#" style={{ color: "gold", fontSize: "30px" }} className="title">{title}</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <Navbar.Toggle id="mybtn" aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
                             className="me-auto my-2 my-lg-0"
@@ -140,16 +140,7 @@ export function NavScrollExample({ title }) {
                             <button class="btn btn-outline-warning me-2" type="button" onClick={() => navigate("/myorders")}> <div className="icon"></div><FaShoppingCart />Order</button>: ""
                             }
                         </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
 
-                            />
-                            <Button class="btn btn-outline-warning me-2" onClick={() => filtered()}>Search</Button>
-                        </Form>
                         <button class="btn btn-outline-warning me-2" type="button" onClick={()=>logout()}>Logout</button>
                         <button class="btn btn-outline-warning me-2" type="button" onClick={()=>adminlogin()} >Adminlogin</button>
                     </Navbar.Collapse>

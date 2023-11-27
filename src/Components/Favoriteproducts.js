@@ -44,7 +44,7 @@ function Favoriteproducts() {
             </p>
             <p style={{ margin: "0px" }}>
               <span style={{ color: "blue" }}>Price:</span>
-              {productDatas.price}/hr
+              {productDatas.price}
             </p>
 
             <div className="btn-group">
@@ -55,7 +55,7 @@ function Favoriteproducts() {
                 View Detail
               </button>{" "}
               |
-              <Link className="btn btn-danger" to={"/"}>
+              <Link className="btn btn-danger" to={"/dashboard"}>
                 Back
               </Link>
             </div>
